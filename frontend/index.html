@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Advisor AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =========================
+             TOP BAR
+        ========================== -->
+
+        <header class="topbar">
+
+            <div class="brand">
+                <span class="brand-name">
+                    Career Advisor AI
+                </span>
+
+                <span class="brand-dot"></span>
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <div class="foundry-status">
+                    <span class="status-dot"></span>
+                    <span>Foundry Local</span>
+                </div>
+
+                <button class="icon-button" type="button">
+                    ☾
+                </button>
+
+                <button class="icon-button" type="button">
+                    ⚙
+                </button>
+
+                <div class="profile-circle">
+                    B
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             MAIN
+        ========================== -->
+
+        <main class="main-content">
+
+
+            <!-- =========================
+                 HERO
+            ========================== -->
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow">
+                        YOUR PERSONAL CAREER ADVISOR
+                    </div>
+
+                    <h1>
+                        AI-Powered
+                        <span>Career Guidance</span>
+                    </h1>
+
+                    <p>
+                        Discover career opportunities, get personalized
+                        recommendations, and ask questions about your future
+                        — all in one place.
+                    </p>
+
+                </div>
+
+                <div class="hero-orb"></div>
+
+            </section>
+
+
+            <!-- =========================
+                 PROFILE + CHAT
+            ========================== -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- PROFILE -->
+
+                <section class="panel profile-panel">
+
+                    <div class="panel-header">
+
+                        <div class="panel-icon">
+                            ♙
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Build Your Career Profile
+                            </h2>
+
+                            <p>
+                                Tell us about yourself to get personalized
+                                career recommendations.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="careerForm">
+
+                        <div class="form-grid">
+
+
+                            <div class="form-group">
+
+                                <label for="skills">
+                                    Skills
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="skills"
+                                    placeholder="e.g. Python, SQL, Data Analysis"
+                                    required
+                                >
+
+                                <small>
+                                    Separate multiple skills with commas.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="interests">
+                                    Career Interests
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="interests"
+                                    placeholder="e.g. Artificial Intelligence, Data Science"
+                                    required
+                                >
+
+                                <small>
+                                    Separate multiple interests with commas.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="education">
+                                    Education
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="education"
+                                    placeholder="e.g. Computer Science"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="experience">
+                                    Experience Level
+                                </label>
+
+                                <select
+                                    id="experience"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select experience level
+                                    </option>
+
+                                    <option value="Student">
+                                        Student
+                                    </option>
+
+                                    <option value="Junior">
+                                        Junior
+                                    </option>
+
+                                    <option value="Mid-Level">
+                                        Mid-Level
+                                    </option>
+
+                                    <option value="Senior">
+                                        Senior
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label for="location">
+                                    Preferred Location
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="location"
+                                    placeholder="e.g. Remote, London, New York"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="recommend-button"
+                        >
+
+                            <span>✦</span>
+
+                            Get Career Recommendations
+
+                        </button>
+
+                    </form>
+
+                </section>
+
+
+
+                <!-- CHAT -->
+
+                <section class="panel chat-panel">
+
+                    <div class="panel-header">
+
+                        <div class="panel-icon">
+                            ▰
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Career Advisor Chat
+                            </h2>
+
+                            <p>
+                                Ask questions about career options,
+                                skills, and opportunities.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="chatMessages"
+                        class="chat-messages"
+                    >
+
+                        <div class="chat-message assistant-message">
+
+                            <div class="assistant-avatar">
+                                ✦
+                            </div>
+
+                            <div class="message-content">
+
+                                <div class="message-label">
+                                    Career Advisor
+                                </div>
+
+                                <div class="message-bubble">
+
+                                    Hello! Build your career profile above,
+                                    then ask me anything about your career
+                                    options.
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="suggested-questions">
+
+                            <button
+                                type="button"
+                                class="suggestion"
+                                data-question="What skills are important for data science?"
+                            >
+                                <span>
+                                    What skills are important for data science?
+                                </span>
+
+                                <strong>→</strong>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="suggestion"
+                                data-question="How can I switch to a tech career?"
+                            >
+                                <span>
+                                    How can I switch to a tech career?
+                                </span>
+
+                                <strong>→</strong>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="suggestion"
+                                data-question="What are good entry-level roles for AI?"
+                            >
+                                <span>
+                                    What are good entry-level roles for AI?
+                                </span>
+
+                                <strong>→</strong>
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="suggestion"
+                                data-question="How do I improve my resume?"
+                            >
+                                <span>
+                                    How do I improve my resume?
+                                </span>
+
+                                <strong>→</strong>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="chatForm"
+                        class="chat-form"
+                    >
+
+                        <input
+                            type="text"
+                            id="chatInput"
+                            placeholder="Ask a career-related question..."
+                            autocomplete="off"
+                            required
+                        >
+
+                        <button
+                            type="submit"
+                            class="send-button"
+                        >
+                            ➤
+                        </button>
+
+                    </form>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- =========================
+                 RESULTS
+            ========================== -->
+
+            <section
+                id="results"
+                class="results hidden"
+            >
+
+                <div class="results-header">
+
+                    <div>
+
+                        <div class="eyebrow">
+                            PERSONALIZED RESULTS
+                        </div>
+
+                        <h2>
+                            Recommended Career Opportunities
+                        </h2>
+
+                    </div>
+
+                </div>
+
+                <div id="recommendationList"></div>
+
+            </section>
+
+
+
+            <!-- =========================
+                 LOADING
+            ========================== -->
+
+            <div
+                id="loading"
+                class="loading hidden"
+            >
+
+                <div class="loading-spinner"></div>
+
+                <span>
+                    Analyzing your profile...
+                </span>
+
+            </div>
+
+
+
+            <!-- =========================
+                 FOOTER
+            ========================== -->
+
+            <footer class="footer">
+
+                <span>
+                    Powered by Microsoft Foundry Local
+                </span>
+
+                <span class="footer-separator">
+                    |
+                </span>
+
+                <span>
+                    Career Advisor AI
+                </span>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

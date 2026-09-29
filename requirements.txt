@@ -1,0 +1,10 @@
+pandas
+numpy
+sentence-transformers
+faiss-cpu
+fastapi
+uvicorn
+pydantic
+python-dotenv
+langchain-text-splitters
+foundry-local-sdk
